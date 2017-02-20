@@ -15,11 +15,12 @@ public class Write {
         FILE_PATH = "data\\out_result.txt";
     }
 
+    private static final String OUTPUT_TEXT = "Product of numbers multiplication = ";
+
     public static void writeFile(ArrayList<InputNumber> listResult) {
         String textToWrite = "";
-        String outputText = "Product of numbers multiplication = ";
         for (InputNumber inputNumber : listResult) {
-            textToWrite += new StringBuilder().append( outputText ).append( inputNumber.getInputValue() ).append( "\n" ).toString();
+            textToWrite += new StringBuilder().append( OUTPUT_TEXT ).append( inputNumber.getInputValue() ).append( "\n" ).toString();
         }
         File file = new File( FILE_PATH );
         boolean isCreated = true;

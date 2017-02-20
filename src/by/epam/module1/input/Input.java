@@ -17,25 +17,29 @@ public class Input {
         FILE_PATH = "data\\in_file.txt";
     }
 
-    private static final int invalidNumber = 0;
+    private static final int INVALID_NUMBER = 0;
 
-    public static ArrayList<InputNumber> readFile() throws FileNotFoundException
+    public static ArrayList<InputNumber> readFile()
 
     {
-        Scanner sc = new Scanner( new File( FILE_PATH ) );
         ArrayList<InputNumber> list = new ArrayList<>();
-        while (sc.hasNext()) {
-            String currVal;
-            try {
-                currVal = sc.nextLine();
-                if (abs( Integer.parseInt( currVal ) / 1000 ) > 1) {
-                    list.add( new InputNumber( Integer.parseInt( currVal ) ) );
-                } else {
-                    list.add( new InputNumber( invalidNumber ) );
+        try {
+            Scanner sc = new Scanner( new File( FILE_PATH ) );
+            while (sc.hasNext()) {
+                String currVal;
+                try {
+                    currVal = sc.nextLine();
+                    if ((abs( Integer.parseInt( currVal ) / 1000 ) > 1) && (abs( Integer.parseInt( currVal ) / 1000 ) < 10)) {
+                        list.add( new InputNumber( Integer.parseInt( currVal ) ) );
+                    } else {
+                        list.add( new InputNumber( INVALID_NUMBER ) );
+                    }
+                } catch (NumberFormatException e) {
+                    list.add( new InputNumber( INVALID_NUMBER ) );
                 }
-            } catch (NumberFormatException e) {
-                list.add( new InputNumber( invalidNumber ) );
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
         return list;
     }

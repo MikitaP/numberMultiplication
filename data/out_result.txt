@@ -3,3 +3,5 @@ Product of numbers multiplication = 0
 Product of numbers multiplication = 0
 Product of numbers multiplication = 40
 Product of numbers multiplication = 56
+Product of numbers multiplication = 4096
+Product of numbers multiplication = 0
