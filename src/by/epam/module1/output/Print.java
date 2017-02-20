@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Write {
+public class Print {
     private static final String FILE_PATH;
 
     static {
